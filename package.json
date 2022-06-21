@@ -1,0 +1,19 @@
+{
+  "name": "jsblockchain_programming",
+  "version": "1.0.0",
+  "description": "Blockchain Programming in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JervanSahd/jsblockchain_programming.git"
+  },
+  "author": "Steve Snavely",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JervanSahd/jsblockchain_programming/issues"
+  },
+  "homepage": "https://github.com/JervanSahd/jsblockchain_programming#readme"
+}
