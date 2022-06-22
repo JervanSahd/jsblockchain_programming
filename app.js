@@ -7,6 +7,10 @@ const app = express();
 
 let transactions = [];
 
+// creates variables for the blockchain
+let genesisBlock = new Block();
+let blockchain = new Blockchain(genesisBlock);
+
 //body parser for JSON
 app.use(express.json());
 
@@ -23,20 +27,30 @@ app.post("/transactions", (req, res) => {
   res.json(transactions);
 });
 
-app.get("/blockchain", (req, res) => {
-  let transaction = new Transaction("Mary", "John", 100);
+// request from a block and gets everything back
+app.get("/mine", (req, res) => {
+  let block = blockchain.getNextBlock(transactions);
 
-  // create the genesis block
-  let genesisBlock = new Block();
-  // create a blockchain with genesisBlock
-  let blockchain = new Blockchain(genesisBlock);
-
-  let block = blockchain.getNextBlock([transaction]);
+  // adds block to the blockchain
   blockchain.addBlock(block);
+  // returns the block
+  res.json(block);
+});
 
-  let anotherTransaction = new Transaction("Steve", "Brian", 500);
-  let block1 = blockchain.getNextBlock([anotherTransaction]);
-  blockchain.addBlock(block1);
+app.get("/blockchain", (req, res) => {
+  //   let transaction = new Transaction("Mary", "John", 100);
+
+  //   // create the genesis block
+  //   let genesisBlock = new Block();
+  //   // create a blockchain with genesisBlock
+  //   let blockchain = new Blockchain(genesisBlock);
+
+  //   let block = blockchain.getNextBlock([transaction]);
+  //   blockchain.addBlock(block);
+
+  //   let anotherTransaction = new Transaction("Steve", "Brian", 500);
+  //   let block1 = blockchain.getNextBlock([anotherTransaction]);
+  //   blockchain.addBlock(block1);
 
   res.json(blockchain);
 });
