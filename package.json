@@ -2,7 +2,7 @@
   "name": "jsblockchain_programming",
   "version": "1.0.0",
   "description": "Blockchain Programming in JavaScript",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JervanSahd/jsblockchain_programming/issues"
   },
-  "homepage": "https://github.com/JervanSahd/jsblockchain_programming#readme"
+  "homepage": "https://github.com/JervanSahd/jsblockchain_programming#readme",
+  "dependencies": {
+    "js-sha256": "^0.9.0"
+  }
 }
